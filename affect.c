@@ -1,13 +1,13 @@
 /******************************************************************/
 /**                                                              **/
-/**   --- AFFECT.C ---                                           **/
+/**                        AFFECT.C                              **/
 /**                                                              **/
 /******************************************************************/
 
 #include "affect.h"
 
 // ----------------------------------------------------------------------------
-// Reduit la matrice horitalement ---------------------------------------------
+// Réduit la matrice horitalement ---------------------------------------------
 float Reduit_Horizont ( void ) 
 {
 	int i, j ;
@@ -18,7 +18,7 @@ float Reduit_Horizont ( void )
 	for ( i = 0; i < NBR_SOMMET ; i++ )
 	{
 		Min = Matrice [ i ][ 0 ] ;
-		// Recherche la Minimun de chaque ligne
+		// Recherche la Minimum de chaque ligne
 		for ( j = 1 ; j < NBR_SOMMET ; j++ )
 			if ( Matrice [ i ][ j ] < Min )
 				Min = Matrice [ i ] [ j ] ;
@@ -35,7 +35,7 @@ float Reduit_Horizont ( void )
 }
 
 // ---------------------------------------------------------------------------
-// Reduit la matrice verticalement -------------------------------------------
+// Réduit la matrice verticalement -------------------------------------------
 float Reduit_Vertical ( void )
 {
 	int i, j ;
@@ -46,7 +46,7 @@ float Reduit_Vertical ( void )
 	for ( j = 0 ; j < NBR_SOMMET ; j++ )
 	{
 		Min = Matrice [ 0 ][ j ] ;
-		// Recherche la Minimun de chaque colonnes
+		// Recherche la Minimum de chaque colonnes
 		for ( i = 1 ; i < NBR_SOMMET ; i++ )
 			if ( Matrice [ i ][ j ] < Min )
 				Min = Matrice [ i ] [ j ] ;
@@ -63,7 +63,7 @@ float Reduit_Vertical ( void )
 }
 
 // -------------------------------------------------------------------
-// Marque Ligne et colonne de matrice pour ensuite la reduire --------
+// Marque Ligne et colonne de matrice pour ensuite la réduire --------
 void Marque_Matrice ( void )
 {
 	int i, j ;
@@ -73,7 +73,7 @@ void Marque_Matrice ( void )
 	Init_Matrice_ligne ( L_MARKE ) ;
 	Init_Matrice_colonne () ;
 	
-	// Chek une premiere fois les lignes non marqué --------------
+	// Chek une première fois les lignes non marqué --------------
 	for ( i = 0 ; i < NBR_SOMMET ; i ++ )
 	{
 		for ( j = 0 ; j < NBR_SOMMET ; j ++ )
@@ -95,7 +95,7 @@ void Marque_Matrice ( void )
 		{
 			if ( Matrice_ligne [ i ] == L_MARKE )
 			{
-				// Verifie les zero marqué
+				// Vérifie les zero marqué
 				for ( j = 0 ; j < NBR_SOMMET ; j++ )
 				{
 					if ( ( Matrice_zero [ i ][ j ] == BARRE ) && ( Matrice_colonne[ j ] != C_MARKE ) )
